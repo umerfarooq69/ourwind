@@ -1,6 +1,3 @@
-// let keys = ['display', 'grid-template-columns', 'gap', 'width', 'height']
-// let values = ['display', 'grid-tem-cols', 'gap', 'w', 'h']
-
 import { cssProperties } from "../staticData.js"
 
 const extractCss = (cssFor, props) => {
@@ -18,13 +15,13 @@ const extractCss = (cssFor, props) => {
     classesArray && classesArray.length > 0 && classesArray.map((items) => {
 
         // Check if there is syntax error
-        if (items && items.includes('=') && items.includes('[') && items.includes(']')) {
+        if (items && items.includes('-[') && items.includes('[') && items.includes(']')) {
 
-            let cssObjectKey = items.split('=')[0]
+            let cssObjectKey = items.split('-[')[0]
             let cssValue = items.split('[')[1].replace(']', '')
 
             // Adding spaces in css values
-            if (cssValue.includes('/')) { cssValue = cssValue.replace(/[/]/g, ' '); }
+            if (cssValue.includes('_')) { cssValue = cssValue.replace(/_/g, ' '); }
 
             // Checking valid Css Properties
             cssProperties.map((item) => {
@@ -49,4 +46,6 @@ const extractCss = (cssFor, props) => {
 }
 
 // Main Function
-export const blockAndInlineElementsProperties = (cssFor, props) => { return { ...extractCss(cssFor, props) }; }
+export const blockAndInlineElementsProperties = (cssFor, props) => {
+    return { ...extractCss(cssFor, props) };
+}
