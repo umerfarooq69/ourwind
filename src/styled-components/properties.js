@@ -1,3 +1,17 @@
+// ****************************************
+// -THERE ARE THREE IF() CHECK IN DrawCssObject()
+// 1) FIRST CHECK IS CHECKING IF CLASS EXISTS
+// 2) SECOND CHECK IS CHECKING FOR CORRECT SYNTAX
+// 3) THIRD CHECK IS CHECKING FOR IF THERE IS ANY SPACE DECLARE IN CSS VALUE USING (_) AND THEN IT WIL REPLACE WITH SPACE
+// ****************************************
+
+// ****************************************
+// -THERE ARE THREE MAPS FUNCTION USING IN DrawCssObject(). FIRST TWO MAPS FUCNTION ARE NESTED
+// 1) FIRST MAP GETTING ALL CLASSES
+// 2) SECOND MAP IS CREATING A (CSS) OBJECT ARRAY
+// 3) THE THIRD MAP IS DESTRUCTURE ALL THE OBJECTS FROM THE ARRAY
+// ****************************************
+
 import { cssProperties } from "../staticData.js"
 
 const DrawCssObject = (cssFor, props) => {
