@@ -24,7 +24,6 @@ const DrawCssObject = (cssFor, props) => {
 
     // Check If Classes Exist
     if (classes) {
-
         // Spliting all classes
         const get_all_classes = classes ? classes.split(' ') : [];
 
@@ -62,10 +61,15 @@ const DrawCssObject = (cssFor, props) => {
             return null;
         });
     }
+
     return css;
 }
 
 // Main Function
 export const ElementsProeprties = (cssFor, props) => {
     return props[cssFor] && DrawCssObject(cssFor, props);
+}
+
+export const objectChangeToCssFormate = (object) => {
+    return object.replace(/"([^"]+)":"([^"]+)"/g, '$1:$2;').replace(/;,/g, ';').replace(/;}/g, '}')
 }

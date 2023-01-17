@@ -1,9 +1,14 @@
 import React from "react";
-import { H1 } from "../../styled-components";
+import { Div, H1, Input } from "../../styled-components";
 
 const LandingPage = () => {
     return (
-        <H1 classes='color-[green]' hover="bg-[#000]">a</H1>
+        <Div classes="display-[grid] grid-tc-[repeat(6,1fr)] gap-[15px]">
+            <H1 classes='color-[#333]'>a</H1>
+            <H1 classes='color-[#333]'>a</H1>
+            <H1 classes='color-[#333]'>a</H1>
+            <H1 classes='color-[#333]'>a</H1>
+        </Div >
     );
 };
 

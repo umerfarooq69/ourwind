@@ -1,207 +1,393 @@
 import styled from "styled-components";
-import { pseudoClasses, pseudoElements } from "../staticData";
-import { ElementsProeprties } from "./properties";
+import { pseudoClasses } from "../staticData";
+import { ElementsProeprties, objectChangeToCssFormate } from "./properties";
 
 export const Div = styled.div`
-       ${props => ElementsProeprties('classes', props)}
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
 
-       &:hover{
-            ${props => ElementsProeprties('hover', props)}
-        }
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
 
-       &:focus{
-            ${props => ElementsProeprties('focus', props)}
-       }
-
-       &:active{
-            ${props => ElementsProeprties('active', props)}
-       }
-
-       &:after{
-            ${props => ElementsProeprties('after', props)}
-       }
-
-       &:before{
-            ${props => ElementsProeprties('before', props)}
-       }
-
-       &::-webkit-scrollbar {
-            ${props => ElementsProeprties('scrollbar', props)}
-        }
-
-       &::-webkit-scrollbar-track {
-        ${props => ElementsProeprties('scrollbarTrack', props)}
-       }
-
-       &::-webkit-scrollbar-thumb {
-        ${props => ElementsProeprties('scrollbarThumb', props)}
-       }
-
-       &::-webkit-scrollbar-thumb:hover {
-        ${props => ElementsProeprties('scrollbarHover', props)}
-       }
-
-       @media screen {
-            @media (min-width: 767px) and (max-width: 1200px) {
-
-                ${props => ElementsProeprties('md', props)}
-
-                &:hover{
-                    ${props => ElementsProeprties('md-hover', props)}
-                }
-
-                &:focus{
-                    ${props => ElementsProeprties('md-focus', props)}
-                }
-
-                &:active{
-                    ${props => ElementsProeprties('md-active', props)}
-                }
-
-                &:after{
-                    ${props => ElementsProeprties('md-after', props)}
-                }
-
-                &:before{
-                    ${props => ElementsProeprties('md-before', props)}
-                }
-            }
-        }
-
-        @media screen {
-            @media (min-width: 320px) and (max-width: 767px) {
-
-                ${props => ElementsProeprties('sm', props)}
-
-                &:hover{
-                    ${props => ElementsProeprties('sm-hover', props)}
-                }
-
-                &:focus{
-                    ${props => ElementsProeprties('sm-focus', props)}
-                }
-
-                &:active{
-                    ${props => ElementsProeprties('sm-active', props)}
-                }
-
-                &:after{
-                    ${props => ElementsProeprties('sm-after', props)}
-                }
-
-                &:before{
-                    ${props => ElementsProeprties('sm-before', props)}
-                }
-            }
-        }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
 `;
 
 export const P = styled.p`
-       ${props => ElementsProeprties('classes', props)}
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
 
-       &:hover{
-            ${props => ElementsProeprties('hover', props)}
-        }
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
 
-       &:focus{
-            ${props => ElementsProeprties('focus', props)}
-       }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
+`;
 
-       &:active{
-            ${props => ElementsProeprties('active', props)}
-       }
+export const Label = styled.label`
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
 
-       &:after{
-            ${props => ElementsProeprties('after', props)}
-       }
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
 
-       &:before{
-            ${props => ElementsProeprties('before', props)}
-       }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
+`;
 
-       &::-webkit-scrollbar {
-            ${props => ElementsProeprties('scrollbar', props)}
-        }
+export const Span = styled.span`
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
 
-       &::-webkit-scrollbar-track {
-        ${props => ElementsProeprties('scrollbarTrack', props)}
-       }
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
 
-       &::-webkit-scrollbar-thumb {
-        ${props => ElementsProeprties('scrollbarThumb', props)}
-       }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
+`;
 
-       &::-webkit-scrollbar-thumb:hover {
-        ${props => ElementsProeprties('scrollbarHover', props)}
-       }
+export const I = styled.i`
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
 
-       @media screen {
-            @media (min-width: 767px) and (max-width: 1200px) {
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
 
-                ${props => ElementsProeprties('md', props)}
-
-                &:hover{
-                    ${props => ElementsProeprties('md-hover', props)}
-                }
-
-                &:focus{
-                    ${props => ElementsProeprties('md-focus', props)}
-                }
-
-                &:active{
-                    ${props => ElementsProeprties('md-active', props)}
-                }
-
-                &:after{
-                    ${props => ElementsProeprties('md-after', props)}
-                }
-
-                &:before{
-                    ${props => ElementsProeprties('md-before', props)}
-                }
-            }
-        }
-
-        @media screen {
-            @media (min-width: 320px) and (max-width: 767px) {
-
-                ${props => ElementsProeprties('sm', props)}
-
-                &:hover{
-                    ${props => ElementsProeprties('sm-hover', props)}
-                }
-
-                &:focus{
-                    ${props => ElementsProeprties('sm-focus', props)}
-                }
-
-                &:active{
-                    ${props => ElementsProeprties('sm-active', props)}
-                }
-
-                &:after{
-                    ${props => ElementsProeprties('sm-after', props)}
-                }
-
-                &:before{
-                    ${props => ElementsProeprties('sm-before', props)}
-                }
-            }
-        }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
 `;
 
 export const H1 = styled.h1`
     ${props =>
         pseudoClasses.map((item) => {
-            // console.log(item.name, ElementsProeprties(item.value, props))
-            return props[item.value] ? ElementsProeprties(item.value, props) : null
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
         })
     }
 
-    ${props =>
-        pseudoElements.map((item) => {
-            // console.log(item.name, ElementsProeprties(item.value, props))
-            return props[item.value] ? ElementsProeprties(item.value, props) : null
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
         })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const H2 = styled.h2`
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const H3 = styled.h3`
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const H4 = styled.h4`
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const H5 = styled.h5`
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const H6 = styled.h6`
+    ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+        }
+`;
+
+export const Input = styled.input`
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
+
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
+    }
+`;
+
+export const Img = styled.img`
+ ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.desktop] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                : null
+        })
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.md] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                : null
+        })
+    }
+    }
+
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+        ${props =>
+        pseudoClasses.map((item) => {
+            return props[item.sm] ?
+                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                : null
+        })
+    }
     }
 `;

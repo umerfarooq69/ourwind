@@ -63,17 +63,19 @@ export let cssProperties = [
   { key: 'right', property: 'right' },
 
   // Text & Fonts
-  { key: 'fz', property: 'font-size' },
-  { key: 'fw', property: 'font-weight' },
-  { key: 'ta', property: 'text-align' },
-  { key: 'tt', property: 'text-transform' },
-  { key: 'ff', property: 'font-family' },
+  { key: 'font-s', property: 'font-size' },
+  { key: 'font-w', property: 'font-weight' },
+  { key: 'text-a', property: 'text-align' },
+  { key: 'text-t', property: 'text-transform' },
+  { key: 'font-f', property: 'font-family' },
+  { key: 'leading', property: 'line-height' },
+  { key: 'letter-s', property: 'letter-spacing' },
 
   // Box-shadow
   { key: 'box-s', property: 'box-shadow' },
 
   // Outline Properties
-  { key: 'ol', property: 'outline' },
+  { key: 'outline', property: 'outline' },
   { key: 'ol-c', property: 'outline-color' },
   { key: 'ol-o', property: 'outline-offset' },
   { key: 'ol-s', property: 'outline-style' },
@@ -89,33 +91,38 @@ export let cssProperties = [
   // After & Before
   { key: 'content', property: 'content' },
 
-]
+  // Image Properties
+  { key: 'object-f', property: 'object-fit' },
 
-// Pseudo Classes
-export let pseudoClasses = [
-  { name: '', value: 'classes' },
-  { name: '&:focus', value: 'focus' },
-  { name: '&:hover', value: 'hover' },
-  { name: '&:link', value: 'link' },
-  { name: '&:active', value: 'active' },
-  { name: '&:visited', value: 'visited' },
 ]
 
 // Pseudo Elements
 export let pseudoElements = [
-  { name: '&::after', value: 'after' },
-  { name: '&::before', value: 'before' },
-  { name: '&::first-line ', value: 'firstLine' },
-  { name: '&::first-letter', value: 'firstLetter' },
-  { name: '&::backdrop', value: 'backdrop' },
-  { name: '&::file-selector-button', value: 'fileSelectorButton' },
-  { name: '&::grammar-error', value: 'grammarError' },
-  { name: '&::marker', value: 'marker' },
-  { name: '&::placeholder', value: 'placeholder' },
-  { name: '&::selection', value: 'selection' },
-  { name: '&::target-text', value: 'targetText' },
-  { name: '&::-webkit-scrollbar', value: 'scrollbar' },
-  { name: '&::-webkit-scrollbar-track', value: 'scrollbarTrack' },
-  { name: '&::-webkit-scrollbar-track', value: 'scrollbarThumb' },
-  { name: '&::-webkit-scrollbar-thumb:hover', value: 'scrollbarHover' },
+  { name: '&::after', desktop: 'after', md: 'md-after', sm: 'sm-after' },
+  { name: '&::before', desktop: 'before', md: 'md-before', sm: 'sm-before' },
+  { name: '&::first-line ', desktop: 'firstLine', md: 'md-firstLine', sm: 'sm-firstLine' },
+  { name: '&::first-letter', desktop: 'firstLetter', md: 'md-firstLetter', sm: 'sm-firstLetter' },
+  { name: '&::backdrop', desktop: 'backdrop', md: 'md-backdrop', sm: 'sm-backdrop' },
+  { name: '&::file-selector-button', desktop: 'fileSelectorButton', md: 'md-fileSelectorButton', sm: 'sm-fileSelectorButton' },
+  { name: '&::grammar-error', desktop: 'grammarError', md: 'md-grammarError', sm: 'sm-grammarError' },
+  { name: '&::marker', desktop: 'marker', md: 'md-marker', sm: 'sm-marker' },
+  { name: '&::placeholder', desktop: 'place-holder', md: 'md-placeholder', sm: 'sm-placeholder' },
+  { name: '&::selection', desktop: 'selection', md: 'md-selection', sm: 'sm-selection' },
+  { name: '&::target-text', desktop: 'targetText', md: 'md-targetText', sm: 'sm-targetText' },
+  { name: '&::-webkit-scrollbar', desktop: 'scrollbar', md: 'md-scrollbar', sm: 'sm-scrollbar' },
+  { name: '&::-webkit-scrollbar-track', desktop: 'scrollbarTrack', md: 'md-scrollbarTrack', sm: 'sm-scrollbarTrack' },
+  { name: '&::-webkit-scrollbar-thumb', desktop: 'scrollbar-thumb', md: 'md-scrollbar-thumb', sm: 'sm-scrollbar-thumb' },
+  { name: '&::-webkit-scrollbar-thumb:hover', desktop: 'scrollbarHover', md: 'md-scrollbarHover', sm: 'sm-scrollbarHover' },
 ]
+
+// Pseudo Classes
+export let pseudoClasses = [
+  { name: '', desktop: 'classes', md: 'md', sm: 'sm' },
+  { name: '&:focus', desktop: 'focus', md: 'md-focus', sm: 'sm-focus' },
+  { name: '&:hover', desktop: 'hover', md: 'md-hover', sm: 'sm-hover' },
+  { name: '&:link', desktop: 'link', md: 'md-link', sm: 'sm-link' },
+  { name: '&:active', desktop: 'active', md: 'md-active', sm: 'sm-active' },
+  { name: '&:visited', desktop: 'visited', md: 'md-visited', sm: 'sm-visited' },
+  ...pseudoElements,
+]
+
