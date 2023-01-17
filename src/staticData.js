@@ -65,9 +65,10 @@ export let cssProperties = [
   // Text & Fonts
   { key: 'font-s', property: 'font-size' },
   { key: 'font-w', property: 'font-weight' },
-  { key: 'text-a', property: 'text-align' },
-  { key: 'text-t', property: 'text-transform' },
   { key: 'font-f', property: 'font-family' },
+  { key: 'text-a', property: 'text-align' },
+  { key: 'text-d', property: 'text-decoration' },
+  { key: 'text-t', property: 'text-transform' },
   { key: 'leading', property: 'line-height' },
   { key: 'letter-s', property: 'letter-spacing' },
 

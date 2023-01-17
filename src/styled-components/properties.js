@@ -31,9 +31,9 @@ const DrawCssObject = (cssFor, props) => {
         get_all_classes && get_all_classes.length > 0 && get_all_classes.map((items) => {
 
             // Check if there is syntax error : syntax = cssPropertyName[css_property_values]
-            if (items && items.includes('-[') && items.includes('[') && items.includes(']')) {
+            if (items && items.includes('[') && items.includes('[') && items.includes(']')) {
 
-                let css_property_names = items.split('-[')[0]; // CSS Property Example(CssPorperty: cssValue === margin: 10px)
+                let css_property_names = items.split('[')[0]; // CSS Property Example(Css Porperty: cssValue === margin: 10px)
                 let css_property_values = items.split('[')[1].replace(']', ''); // CSS Property Value Example(CssPorperty: cssValue === margin: 10px)
 
                 // Adding spaces in css values
@@ -48,7 +48,7 @@ const DrawCssObject = (cssFor, props) => {
                 });
 
             } else {
-                console.log(`Syntax Error: (Attribute: ${cssFor}), (Css Property: ${items})`);
+                console.log(`Syntax Error: (Element: ${props.displayName}), (Attribute: ${cssFor}), (Css Property: ${items})`);
                 return null
             }
 

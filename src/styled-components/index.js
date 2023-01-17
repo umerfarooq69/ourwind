@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { pseudoClasses } from "../staticData";
 import { ElementsProeprties, objectChangeToCssFormate } from "./properties";
 
-export const Div = styled.div`
+// BLOCK ELEMENTS
+export const Div = styled.div.attrs({ displayName: 'Div' })`
     ${props =>
         pseudoClasses.map((item) => {
             return props[item.desktop] ?
@@ -32,362 +33,44 @@ export const Div = styled.div`
     }
 `;
 
-export const P = styled.p`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const P = styled(Div).attrs({ as: "p", displayName: 'P' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
+export const H1 = styled(Div).attrs({ as: "h1", displayName: 'H1' })``;
 
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
+export const H2 = styled(Div).attrs({ as: "h2", displayName: 'H2' })``;
 
-export const Label = styled.label`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const H3 = styled(Div).attrs({ as: "h3", displayName: 'H3' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
+export const H4 = styled(Div).attrs({ as: "h4", displayName: 'H4' })``;
 
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
+export const H5 = styled(Div).attrs({ as: "h5", displayName: 'H5' })``;
 
-export const Span = styled.span`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const H6 = styled(Div).attrs({ as: "h6", displayName: 'H6' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
+// INLINE ELEMENTS
+export const Label = styled(Div).attrs({ as: "label", displayName: 'Label' })``;
 
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
+export const Span = styled(Div).attrs({ as: "span", displayName: 'Span' })``;
 
-export const I = styled.i`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const I = styled(Div).attrs({ as: "i", displayName: 'I' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
+export const Img = styled(Div).attrs({ as: "img", displayName: 'Img' })``;
 
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
+export const Href = styled(Div).attrs({ as: "a", displayName: 'A' })``;
 
-export const H1 = styled.h1`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const Button = styled(Div).attrs({ as: "button", displayName: 'Button' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
+// INPUT FORM ELEMENTS
+export const Form = styled(Div).attrs({ as: "form", displayName: 'Form' })``;
 
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
+export const Input = styled(Div).attrs({ as: "input", displayName: 'Input' })``;
 
-export const H2 = styled.h2`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const Select = styled(Div).attrs({ as: "select", displayName: 'Select' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
+export const Options = styled(Div).attrs({ as: "options", displayName: 'Options' })``;
 
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
+export const Textarea = styled(Div).attrs({ as: "textarea", displayName: 'Textarea' })``;
 
-export const H3 = styled.h3`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
+export const Legend = styled(Div).attrs({ as: "legend", displayName: 'Legend' })``;
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
-
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
-
-export const H4 = styled.h4`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
-
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
-
-export const H5 = styled.h5`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
-
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
-
-export const H6 = styled.h6`
-    ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-        }
-
-        @media screen and (min-width: 1px) and (max-width: 767px) {
-            ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-        }
-`;
-
-export const Input = styled.input`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
-
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
-
-export const Img = styled.img`
- ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
-                : null
-        })
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
-                : null
-        })
-    }
-    }
-
-    @media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
-        pseudoClasses.map((item) => {
-            return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
-                : null
-        })
-    }
-    }
-`;
+export const Fieldset = styled(Div).attrs({ as: "fieldset", displayName: 'Fieldset' })``;
