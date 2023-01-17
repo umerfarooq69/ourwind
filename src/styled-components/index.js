@@ -1,52 +1,69 @@
 import styled from "styled-components";
-import { blockAndInlineElementsProperties } from "./properties";
+import { pseudoClasses, pseudoElements } from "../staticData";
+import { ElementsProeprties } from "./properties";
 
 export const Div = styled.div`
-       ${props => blockAndInlineElementsProperties('classes', props)}
+       ${props => ElementsProeprties('classes', props)}
 
        &:hover{
-               ${props => blockAndInlineElementsProperties('hover', props)}
-       }
+            ${props => ElementsProeprties('hover', props)}
+        }
 
        &:focus{
-               ${props => blockAndInlineElementsProperties('focus', props)}
+            ${props => ElementsProeprties('focus', props)}
        }
 
        &:active{
-               ${props => blockAndInlineElementsProperties('active', props)}
+            ${props => ElementsProeprties('active', props)}
        }
 
        &:after{
-               ${props => blockAndInlineElementsProperties('after', props)}
+            ${props => ElementsProeprties('after', props)}
        }
 
        &:before{
-               ${props => blockAndInlineElementsProperties('before', props)}
+            ${props => ElementsProeprties('before', props)}
+       }
+
+       &::-webkit-scrollbar {
+            ${props => ElementsProeprties('scrollbar', props)}
+        }
+
+       &::-webkit-scrollbar-track {
+        ${props => ElementsProeprties('scrollbarTrack', props)}
+       }
+
+       &::-webkit-scrollbar-thumb {
+        ${props => ElementsProeprties('scrollbarThumb', props)}
+       }
+
+       &::-webkit-scrollbar-thumb:hover {
+        ${props => ElementsProeprties('scrollbarHover', props)}
        }
 
        @media screen {
             @media (min-width: 767px) and (max-width: 1200px) {
 
-                ${props => blockAndInlineElementsProperties('md', props)}
+                ${props => ElementsProeprties('md', props)}
 
                 &:hover{
-                    ${props => blockAndInlineElementsProperties('md-hover', props)}
+                    ${props => ElementsProeprties('md-hover', props)}
                 }
 
                 &:focus{
-                    ${props => blockAndInlineElementsProperties('md-focus', props)}
+                    ${props => ElementsProeprties('md-focus', props)}
                 }
 
                 &:active{
-                    ${props => blockAndInlineElementsProperties('md-active', props)}
+                    ${props => ElementsProeprties('md-active', props)}
                 }
 
                 &:after{
-                    ${props => blockAndInlineElementsProperties('md-after', props)}
+                    ${props => ElementsProeprties('md-after', props)}
                 }
 
                 &:before{
-                    ${props => blockAndInlineElementsProperties('md-before', props)}
+                    ${props => ElementsProeprties('md-before', props)}
                 }
             }
         }
@@ -54,27 +71,137 @@ export const Div = styled.div`
         @media screen {
             @media (min-width: 320px) and (max-width: 767px) {
 
-                ${props => blockAndInlineElementsProperties('sm', props)}
+                ${props => ElementsProeprties('sm', props)}
 
                 &:hover{
-                    ${props => blockAndInlineElementsProperties('sm-hover', props)}
+                    ${props => ElementsProeprties('sm-hover', props)}
                 }
 
                 &:focus{
-                    ${props => blockAndInlineElementsProperties('sm-focus', props)}
+                    ${props => ElementsProeprties('sm-focus', props)}
                 }
 
                 &:active{
-                    ${props => blockAndInlineElementsProperties('sm-active', props)}
+                    ${props => ElementsProeprties('sm-active', props)}
                 }
 
                 &:after{
-                    ${props => blockAndInlineElementsProperties('sm-after', props)}
+                    ${props => ElementsProeprties('sm-after', props)}
                 }
 
                 &:before{
-                    ${props => blockAndInlineElementsProperties('sm-before', props)}
+                    ${props => ElementsProeprties('sm-before', props)}
                 }
             }
         }
+`;
+
+export const P = styled.p`
+       ${props => ElementsProeprties('classes', props)}
+
+       &:hover{
+            ${props => ElementsProeprties('hover', props)}
+        }
+
+       &:focus{
+            ${props => ElementsProeprties('focus', props)}
+       }
+
+       &:active{
+            ${props => ElementsProeprties('active', props)}
+       }
+
+       &:after{
+            ${props => ElementsProeprties('after', props)}
+       }
+
+       &:before{
+            ${props => ElementsProeprties('before', props)}
+       }
+
+       &::-webkit-scrollbar {
+            ${props => ElementsProeprties('scrollbar', props)}
+        }
+
+       &::-webkit-scrollbar-track {
+        ${props => ElementsProeprties('scrollbarTrack', props)}
+       }
+
+       &::-webkit-scrollbar-thumb {
+        ${props => ElementsProeprties('scrollbarThumb', props)}
+       }
+
+       &::-webkit-scrollbar-thumb:hover {
+        ${props => ElementsProeprties('scrollbarHover', props)}
+       }
+
+       @media screen {
+            @media (min-width: 767px) and (max-width: 1200px) {
+
+                ${props => ElementsProeprties('md', props)}
+
+                &:hover{
+                    ${props => ElementsProeprties('md-hover', props)}
+                }
+
+                &:focus{
+                    ${props => ElementsProeprties('md-focus', props)}
+                }
+
+                &:active{
+                    ${props => ElementsProeprties('md-active', props)}
+                }
+
+                &:after{
+                    ${props => ElementsProeprties('md-after', props)}
+                }
+
+                &:before{
+                    ${props => ElementsProeprties('md-before', props)}
+                }
+            }
+        }
+
+        @media screen {
+            @media (min-width: 320px) and (max-width: 767px) {
+
+                ${props => ElementsProeprties('sm', props)}
+
+                &:hover{
+                    ${props => ElementsProeprties('sm-hover', props)}
+                }
+
+                &:focus{
+                    ${props => ElementsProeprties('sm-focus', props)}
+                }
+
+                &:active{
+                    ${props => ElementsProeprties('sm-active', props)}
+                }
+
+                &:after{
+                    ${props => ElementsProeprties('sm-after', props)}
+                }
+
+                &:before{
+                    ${props => ElementsProeprties('sm-before', props)}
+                }
+            }
+        }
+`;
+
+export const H1 = styled.h1`
+    ${props =>
+        pseudoClasses.map((item) => {
+            // console.log(item.name, ElementsProeprties(item.value, props))
+            return props[item.value] ? ElementsProeprties(item.value, props) : null
+        })
+    }
+
+    ${props =>
+        pseudoElements.map((item) => {
+            // console.log(item.name, ElementsProeprties(item.value, props))
+            return props[item.value] ? ElementsProeprties(item.value, props) : null
+        })
+    }
 `;

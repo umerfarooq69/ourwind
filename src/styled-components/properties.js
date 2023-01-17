@@ -1,51 +1,57 @@
 import { cssProperties } from "../staticData.js"
 
-const extractCss = (cssFor, props) => {
-    // If Props exist
-    const classes = props && props[cssFor] ? props[cssFor] : null
-
-    // Spliting all classes
-    const classesArray = classes ? classes.split(' ') : []
-
+const DrawCssObject = (cssFor, props) => {
     // Variables Decleration
-    let css = null
-    let cssObject = []
+    let css = null;
+    let cssObject = [];
 
-    // Map for Classes
-    classesArray && classesArray.length > 0 && classesArray.map((items) => {
+    // If Props exist
+    const classes = props && props[cssFor] ? props[cssFor] : null;
 
-        // Check if there is syntax error
-        if (items && items.includes('-[') && items.includes('[') && items.includes(']')) {
+    // Check If Classes Exist
+    if (classes) {
 
-            let cssObjectKey = items.split('-[')[0]
-            let cssValue = items.split('[')[1].replace(']', '')
+        // Spliting all classes
+        const get_all_classes = classes ? classes.split(' ') : [];
 
-            // Adding spaces in css values
-            if (cssValue.includes('_')) { cssValue = cssValue.replace(/_/g, ' '); }
+        // Map for Classes
+        get_all_classes && get_all_classes.length > 0 && get_all_classes.map((items) => {
 
-            // Checking valid Css Properties
-            cssProperties.map((item) => {
-                return cssObjectKey === item.key ?
-                    cssObject.push({ [item.property]: cssValue })
-                    :
-                    null
-            })
+            // Check if there is syntax error : syntax = cssPropertyName[css_property_values]
+            if (items && items.includes('-[') && items.includes('[') && items.includes(']')) {
 
-        } else { return null }
+                let css_property_names = items.split('-[')[0]; // CSS Property Example(CssPorperty: cssValue === margin: 10px)
+                let css_property_values = items.split('[')[1].replace(']', ''); // CSS Property Value Example(CssPorperty: cssValue === margin: 10px)
 
-        return null;
-    })
+                // Adding spaces in css values
+                if (css_property_values.includes('_')) { css_property_values = css_property_values.replace(/_/g, ' '); }
 
-    // Putting the css object into main object
-    cssObject.map((item) => {
-        css = { ...css, ...item };
-        return null;
-    });
+                // Checking valid Css Properties
+                cssProperties.map((item) => {
+                    return css_property_names === item.key ?
+                        cssObject.push({ [item.property]: css_property_values })
+                        :
+                        null
+                });
 
+            } else {
+                console.log(`Syntax Error: (Attribute: ${cssFor}), (Css Property: ${items})`);
+                return null
+            }
+
+            return null;
+        });
+
+        // Putting the css object into main object
+        cssObject.map((item) => {
+            css = { ...css, ...item };
+            return null;
+        });
+    }
     return css;
 }
 
 // Main Function
-export const blockAndInlineElementsProperties = (cssFor, props) => {
-    return { ...extractCss(cssFor, props) };
+export const ElementsProeprties = (cssFor, props) => {
+    return props[cssFor] && DrawCssObject(cssFor, props);
 }
