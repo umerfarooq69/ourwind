@@ -33,6 +33,10 @@ export const Div = styled.div.attrs({ displayName: 'Div' })`
     }
 `;
 
+export const Main = styled(Div).attrs({ as: "main", displayName: 'Main' })``;
+
+export const Nav = styled(Div).attrs({ as: "nav", displayName: 'Nav' })``;
+
 export const P = styled(Div).attrs({ as: "p", displayName: 'P' })``;
 
 export const H1 = styled(Div).attrs({ as: "h1", displayName: 'H1' })``;
@@ -47,12 +51,18 @@ export const H5 = styled(Div).attrs({ as: "h5", displayName: 'H5' })``;
 
 export const H6 = styled(Div).attrs({ as: "h6", displayName: 'H6' })``;
 
+export const Section = styled(Div).attrs({ as: "section", displayName: 'Section' })``;
+
+export const Artical = styled(Div).attrs({ as: "artical", displayName: 'Artical' })``;
+
 // INLINE ELEMENTS
 export const Label = styled(Div).attrs({ as: "label", displayName: 'Label' })``;
 
 export const Span = styled(Div).attrs({ as: "span", displayName: 'Span' })``;
 
 export const I = styled(Div).attrs({ as: "i", displayName: 'I' })``;
+
+export const B = styled(Div).attrs({ as: "b", displayName: 'B' })``;
 
 export const Img = styled(Div).attrs({ as: "img", displayName: 'Img' })``;
 
