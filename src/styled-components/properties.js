@@ -24,6 +24,7 @@ const DrawCssObject = (cssFor, props) => {
 
     // Check If Classes Exist
     if (classes) {
+
         // Spliting all classes
         const get_all_classes = classes ? classes.split(' ') : [];
 
@@ -48,7 +49,7 @@ const DrawCssObject = (cssFor, props) => {
                 });
 
             } else {
-                console.log(`Syntax Error: (Element: ${props.displayName}), (Attribute: ${cssFor}), (Css Property: ${items})`);
+                // console.log(`Syntax Error: (Element: ${props.displayName}), (Attribute: ${cssFor}), (Css Property: ${items})`);
                 return null
             }
 
@@ -67,9 +68,43 @@ const DrawCssObject = (cssFor, props) => {
 
 // Main Function
 export const ElementsProeprties = (cssFor, props) => {
-    return props[cssFor] && DrawCssObject(cssFor, props);
+    return objectChangeToCssFormate(JSON.stringify(props[cssFor] && DrawCssObject(cssFor, props)));
 }
 
+// Formating for CSS
 export const objectChangeToCssFormate = (object) => {
     return object.replace(/"([^"]+)":"([^"]+)"/g, '$1:$2;').replace(/;,/g, ';').replace(/;}/g, '}')
+}
+
+// When focus Or hover on parent and change child css
+export const parentChangeChildCss = (screen, props) => {
+    let { children } = props
+
+    if (props && props['child-hover'] && children && (children || children.length > 0)) {
+        let getChildHoverName = props['child-hover'].split(' ');
+        let css = ''
+
+        // IF THERE IS MULTIPLE CHILDREN
+        if (children && children.length > 1) {
+
+            for (let i = 0; i < getChildHoverName.length; i++) {
+                for (let v = 0; v < children.length; v++) {
+                    if (children[v].props[getChildHoverName[i]]) {
+                        css += ` ${screen.name} { .${getChildHoverName[i]} ${ElementsProeprties(getChildHoverName[i], children[v].props)} }`;
+                    }
+                }
+
+            }
+
+            return css;
+        } else {
+            for (let i = 0; i < getChildHoverName.length; i++) {
+                if (children.props[getChildHoverName[i]]) {
+                    css = `${screen.name} { .${getChildHoverName[i]} ${ElementsProeprties(getChildHoverName[i], children.props)}  }`;
+                }
+            }
+
+            return css;
+        }
+    }
 }

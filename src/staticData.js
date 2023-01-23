@@ -118,8 +118,9 @@ export let pseudoElements = [
 
 // Pseudo Classes
 export let pseudoClasses = [
-  { name: '', desktop: 'classes', md: 'md', sm: 'sm' },
+  { name: '', desktop: 'className', md: 'md', sm: 'sm' },
   { name: '&:focus', desktop: 'focus', md: 'md-focus', sm: 'sm-focus' },
+  { name: '&:hover', desktop: 'child-hover', md: 'md-child-hover', sm: 'sm-child-hover' },
   { name: '&:hover', desktop: 'hover', md: 'md-hover', sm: 'sm-hover' },
   { name: '&:link', desktop: 'link', md: 'md-link', sm: 'sm-link' },
   { name: '&:active', desktop: 'active', md: 'md-active', sm: 'sm-active' },

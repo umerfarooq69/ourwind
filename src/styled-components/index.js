@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import { pseudoClasses } from "../staticData";
-import { ElementsProeprties, objectChangeToCssFormate } from "./properties";
+import { ElementsProeprties, objectChangeToCssFormate, parentChangeChildCss } from "./properties";
 
 // BLOCK ELEMENTS
-export const Div = styled.div.attrs({ displayName: 'Div' })`
+export let Div = styled.div.attrs({ displayName: 'Div' })`
     ${props =>
         pseudoClasses.map((item) => {
             return props[item.desktop] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.desktop, props)))}`
+                item.desktop === 'child-hover' ?
+                    parentChangeChildCss(item, props)
+                    :
+                    `${item.name} ${ElementsProeprties(item.desktop, props)}`
                 : null
         })
     }
 
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
+@media screen and (min-width: 767px) and (max-width: 1200px) {
         ${props =>
         pseudoClasses.map((item) => {
             return props[item.md] ?
@@ -20,9 +23,9 @@ export const Div = styled.div.attrs({ displayName: 'Div' })`
                 : null
         })
     }
-    }
+}
 
-    @media screen and (min-width: 1px) and (max-width: 767px) {
+@media screen and (min-width: 1px) and (max-width: 767px) {
         ${props =>
         pseudoClasses.map((item) => {
             return props[item.sm] ?
@@ -30,7 +33,7 @@ export const Div = styled.div.attrs({ displayName: 'Div' })`
                 : null
         })
     }
-    }
+}
 `;
 
 export const Main = styled(Div).attrs({ as: "main", displayName: 'Main' })``;
