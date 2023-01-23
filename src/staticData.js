@@ -9,21 +9,21 @@ export let cssProperties = [
 
   // Flexible Box Layout
   { key: 'display', property: 'display' },
-  { key: 'grid-tc', property: 'grid-template-columns' },
+  { key: 'grid-t-c', property: 'grid-template-columns' },
   { key: 'gap', property: 'gap' },
-  { key: 'row-gap', property: 'row-gap' },
+  { key: 'row-g', property: 'row-gap' },
   { key: 'align-i', property: 'align-items' },
   { key: 'align-c', property: 'align-content' },
   { key: 'align-s', property: 'align-self' },
   { key: 'justify-c', property: 'justify-content' },
 
   // Flex
-  { key: 'f-basis', property: 'flex-basis' },
-  { key: 'f-direction', property: 'flex-direction' },
-  { key: 'f-flow', property: 'flex-flow' },
-  { key: 'f-grow', property: 'flex-grow' },
-  { key: 'f-shrink', property: 'flex-shrink' },
-  { key: 'f-wrap', property: 'flex-wrap' },
+  { key: 'flex-b', property: 'flex-basis' },
+  { key: 'flex-d', property: 'flex-direction' },
+  { key: 'flex-f', property: 'flex-flow' },
+  { key: 'flex-g', property: 'flex-grow' },
+  { key: 'flex-s', property: 'flex-shrink' },
+  { key: 'flex-w', property: 'flex-wrap' },
   { key: 'order', property: 'order' },
 
   // Background Properties
@@ -53,7 +53,15 @@ export let cssProperties = [
 
   // Padding & Margin
   { key: 'm', property: 'margin' },
+  { key: 'mt', property: 'margin-top' },
+  { key: 'mb', property: 'margin-bottom' },
+  { key: 'mr', property: 'margin-right' },
+  { key: 'ml', property: 'margin-left' },
   { key: 'p', property: 'padding' },
+  { key: 'pt', property: 'padding-top' },
+  { key: 'pb', property: 'padding-bottom' },
+  { key: 'pr', property: 'padding-right' },
+  { key: 'pl', property: 'padding-left' },
 
   // Postions
   { key: 'position', property: 'position' },
@@ -74,26 +82,30 @@ export let cssProperties = [
 
   // Box-shadow
   { key: 'box-s', property: 'box-shadow' },
+  { key: 'box-sizing', property: 'box-sizing' },
 
   // Outline Properties
   { key: 'outline', property: 'outline' },
-  { key: 'ol-c', property: 'outline-color' },
-  { key: 'ol-o', property: 'outline-offset' },
-  { key: 'ol-s', property: 'outline-style' },
-  { key: 'ol-w', property: 'outline-width' },
+  { key: 'outline-c', property: 'outline-color' },
+  { key: 'outline-o', property: 'outline-offset' },
+  { key: 'outline-s', property: 'outline-style' },
+  { key: 'outline-w', property: 'outline-width' },
 
   // Transitions
   { key: 'transition', property: 'transition' },
-  { key: 'transition-d', property: 'transition' },
-  { key: 'transition-duration', property: 'transition' },
-  { key: 'transition-p', property: 'transition' },
-  { key: 'transition-t-f', property: 'transition' },
+  { key: 'transition-d', property: 'transition-delay' },
+  { key: 'transition-duration', property: 'transition-duration' },
+  { key: 'transition-p', property: 'transition-property' },
+  { key: 'transition-t-f', property: 'transition-timing-function' },
 
   // After & Before
   { key: 'content', property: 'content' },
+  { key: 'content-v', property: 'content-visibility' },
 
   // Image Properties
   { key: 'object-f', property: 'object-fit' },
+  { key: 'object-p', property: 'object-position' },
+  { key: 'object-v-b', property: 'object-view-box' },
 
 ]
 
@@ -118,7 +130,7 @@ export let pseudoElements = [
 
 // Pseudo Classes
 export let pseudoClasses = [
-  { name: '', desktop: 'className', md: 'md', sm: 'sm' },
+  { name: '', desktop: 'classes', md: 'md', sm: 'sm' },
   { name: '&:focus', desktop: 'focus', md: 'md-focus', sm: 'sm-focus' },
   { name: '&:hover', desktop: 'child-hover', md: 'md-child-hover', sm: 'sm-child-hover' },
   { name: '&:hover', desktop: 'hover', md: 'md-hover', sm: 'sm-hover' },
