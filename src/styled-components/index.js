@@ -69,7 +69,7 @@ export const B = styled(Div).attrs({ as: "b", displayName: 'B' })``;
 
 export const Img = styled(Div).attrs({ as: "img", displayName: 'Img' })``;
 
-export const Href = styled(Div).attrs({ as: "a", displayName: 'A' })``;
+export const Href = styled(Div).attrs({ as: "a", displayName: 'Href' })``;
 
 export const Button = styled(Div).attrs({ as: "button", displayName: 'Button' })``;
 
