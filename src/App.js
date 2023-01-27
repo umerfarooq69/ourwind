@@ -6,6 +6,7 @@ function App() {
     <>
       <Div classes='p[20px] bg[#f5f5f5] border[1px_solid_#eee]'>
         hello
+        world
       </Div>
     </>
   );
