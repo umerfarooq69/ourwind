@@ -109,8 +109,8 @@ export let cssProperties = [
   { key: 'object-v-b', property: 'object-view-box' },
 
 
-  {key:'cursor', property:'cursor'}
-
+  { key: 'cursor', property: 'cursor' }
+]
 // Pseudo Elements
 export let pseudoElements = [
   { name: '&::after', desktop: 'after', md: 'md-after', sm: 'sm-after' },
