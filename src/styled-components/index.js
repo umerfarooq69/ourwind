@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { pseudoClasses } from "../staticData";
-import { ElementsProeprties, objectChangeToCssFormate, parentChangeChildCss } from "./properties";
+import { ElementsProeprties, objectChangeToCssFormate, parentChangeChildCss, setAttributes } from "./properties";
 
 // BLOCK ELEMENTS
-export let Div = styled.div.attrs({ displayName: 'Div' })`
+export let Div = styled.div.attrs(props => ({ as: "div", displayName: 'Div', ...setAttributes(props) }))`
     ${props =>
         pseudoClasses.map((item) => {
             return props[item.desktop] ?

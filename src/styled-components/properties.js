@@ -108,3 +108,23 @@ export const parentChangeChildCss = (screen, props) => {
         }
     }
 }
+
+
+var getClassNameForHover = [];
+export const setAttributes = (props) => {
+    if (props['child-hover']) {
+        getClassNameForHover = props['child-hover'].split(' ')
+    }
+
+    let setClassName;
+    getClassNameForHover.map((item) => {
+        if (props[item]) {
+            setClassName = { className: item }
+        }
+
+    })
+
+    console.log(setClassName)
+
+    return { ...setClassName }
+}
