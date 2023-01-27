@@ -49,7 +49,9 @@ const DrawCssObject = (cssFor, props) => {
                 });
 
             } else {
-                // console.log(`Syntax Error: (Element: ${props.displayName}), (Attribute: ${cssFor}), (Css Property: ${items})`);
+                // if (!props[cssFor].search('  ')) {
+                //     console.log(`Syntax Error: (Element: ${props.displayName}), (Attribute: ${cssFor}), (Css Property: ${items})`);
+                // }
                 return null
             }
 
@@ -109,22 +111,19 @@ export const parentChangeChildCss = (screen, props) => {
     }
 }
 
-
+// Set classname for each element if there parent has child-hover attr
 var getClassNameForHover = [];
 export const setAttributes = (props) => {
+    let setClassName;
+
     if (props['child-hover']) {
-        getClassNameForHover = props['child-hover'].split(' ')
+        getClassNameForHover = props['child-hover'].split(' ');
     }
 
-    let setClassName;
     getClassNameForHover.map((item) => {
-        if (props[item]) {
-            setClassName = { className: item }
-        }
+        if (props[item]) { setClassName = { className: item }; }
+        return null;
+    });
 
-    })
-
-    console.log(setClassName)
-
-    return { ...setClassName }
+    return { ...setClassName };
 }
