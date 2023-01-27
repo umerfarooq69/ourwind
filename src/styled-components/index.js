@@ -15,25 +15,25 @@ export let Div = styled.div.attrs({ displayName: 'Div' })`
         })
     }
 
-@media screen and (min-width: 767px) and (max-width: 1200px) {
-        ${props =>
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+            ${props =>
         pseudoClasses.map((item) => {
             return props[item.md] ?
                 `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
                 : null
         })
     }
-}
+    }
 
-@media screen and (min-width: 1px) and (max-width: 767px) {
-        ${props =>
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+            ${props =>
         pseudoClasses.map((item) => {
             return props[item.sm] ?
                 `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
                 : null
         })
     }
-}
+    }
 `;
 
 export const Main = styled(Div).attrs({ as: "main", displayName: 'Main' })``;

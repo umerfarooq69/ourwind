@@ -79,6 +79,7 @@ export let cssProperties = [
   { key: 'text-t', property: 'text-transform' },
   { key: 'leading', property: 'line-height' },
   { key: 'letter-s', property: 'letter-spacing' },
+  { key: 'word-b', property: 'word-break' },
 
   // Box-shadow
   { key: 'box-s', property: 'box-shadow' },
@@ -106,6 +107,9 @@ export let cssProperties = [
   { key: 'object-f', property: 'object-fit' },
   { key: 'object-p', property: 'object-position' },
   { key: 'object-v-b', property: 'object-view-box' },
+
+  { key: 'cursor', property: 'cursor' },
+
 
 ]
 
