@@ -110,7 +110,6 @@ export let cssProperties = [
 
   { key: 'cursor', property: 'cursor' },
 
-
 ]
 
 // Pseudo Elements
