@@ -110,6 +110,9 @@ export let cssProperties = [
 
   { key: 'cursor', property: 'cursor' },
 
+  // Filter
+  { key: 'filter', property: 'filter' },
+
 ]
 
 // Pseudo Elements
@@ -133,7 +136,7 @@ export let pseudoElements = [
 
 // Pseudo Classes
 export let pseudoClasses = [
-  { name: '', desktop: 'classes', md: 'md', sm: 'sm' },
+  { name: '', desktop: 'className', md: 'md', sm: 'sm' },
   { name: '&:focus', desktop: 'focus', md: 'md-focus', sm: 'sm-focus' },
   { name: '&:hover', desktop: 'child-hover', md: 'md-child-hover', sm: 'sm-child-hover' },
   { name: '&:hover', desktop: 'hover', md: 'md-hover', sm: 'sm-hover' },
