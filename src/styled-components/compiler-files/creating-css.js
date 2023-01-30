@@ -12,9 +12,9 @@
 // 3) THE THIRD MAP IS DESTRUCTURE ALL THE OBJECTS FROM THE ARRAY
 // ****************************************
 
-import { cssProperties } from "../staticData.js"
+import { cssProperties } from "../css-properties.js"
 
-const DrawCssObject = (cssFor, props) => {
+export const DrawCssObject = (cssFor, props) => {
     // Variables Decleration
     let css = null;
     let cssObject = [];
@@ -66,64 +66,4 @@ const DrawCssObject = (cssFor, props) => {
     }
 
     return css;
-}
-
-// Main Function
-export const ElementsProeprties = (cssFor, props) => {
-    return objectChangeToCssFormate(JSON.stringify(props[cssFor] && DrawCssObject(cssFor, props)));
-}
-
-// Formating for CSS
-export const objectChangeToCssFormate = (object) => {
-    return object.replace(/"([^"]+)":"([^"]+)"/g, '$1:$2;').replace(/;,/g, ';').replace(/;}/g, '}')
-}
-
-// When focus Or hover on parent and change child css
-export const parentChangeChildCss = (screen, props) => {
-    let { children } = props
-
-    if (props && props['child-hover'] && children && (children || children.length > 0)) {
-        let getChildHoverName = props['child-hover'].split(' ');
-        let css = ''
-
-        // IF THERE IS MULTIPLE CHILDREN
-        if (children && children.length > 1) {
-
-            for (let i = 0; i < getChildHoverName.length; i++) {
-                for (let v = 0; v < children.length; v++) {
-                    if (children[v].props[getChildHoverName[i]]) {
-                        css += ` ${screen.name} { .${getChildHoverName[i]} ${ElementsProeprties(getChildHoverName[i], children[v].props)} }`;
-                    }
-                }
-
-            }
-
-            return css;
-        } else {
-            for (let i = 0; i < getChildHoverName.length; i++) {
-                if (children.props[getChildHoverName[i]]) {
-                    css = `${screen.name} { .${getChildHoverName[i]} ${ElementsProeprties(getChildHoverName[i], children.props)}  }`;
-                }
-            }
-
-            return css;
-        }
-    }
-}
-
-// Set classname for each element if there parent has child-hover attr
-var getClassNameForHover = [];
-export const setAttributes = (props) => {
-    let setClassName;
-
-    if (props['child-hover']) {
-        getClassNameForHover = props['child-hover'].split(' ');
-    }
-
-    getClassNameForHover.map((item) => {
-        if (props[item]) { setClassName = { className: item }; }
-        return null;
-    });
-
-    return { ...setClassName };
 }

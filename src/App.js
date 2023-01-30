@@ -1,5 +1,5 @@
 import './App.css';
-import { Div, H1, P } from './styled-components/index'
+import { Div, H1, P } from './styled-components/elements'
 
 function App() {
   return (

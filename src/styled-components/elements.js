@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { pseudoClasses } from "../staticData";
-import { ElementsProeprties, objectChangeToCssFormate, parentChangeChildCss, setAttributes } from "./properties";
+import { pseudoClasses } from "./css-properties";
+import { ElementsProeprties } from "./compiler-files/compile";
+import { setAttributes } from "./compiler-files/set-attributes";
+import { parentChangeChildCss } from "./compiler-files/pseudo-elements-and-classes";
 
 // BLOCK ELEMENTS
 export let Div = styled.div.attrs(props => ({ as: "div", displayName: 'Div', ...setAttributes(props) }))`
@@ -19,7 +21,7 @@ export let Div = styled.div.attrs(props => ({ as: "div", displayName: 'Div', ...
             ${props =>
         pseudoClasses.map((item) => {
             return props[item.md] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.md, props)))}`
+                `${item.name} ${ElementsProeprties(item.md, props)}`
                 : null
         })
     }
@@ -29,7 +31,7 @@ export let Div = styled.div.attrs(props => ({ as: "div", displayName: 'Div', ...
             ${props =>
         pseudoClasses.map((item) => {
             return props[item.sm] ?
-                `${item.name} ${objectChangeToCssFormate(JSON.stringify(ElementsProeprties(item.sm, props)))}`
+                `${item.name} ${ElementsProeprties(item.sm, props)}`
                 : null
         })
     }
